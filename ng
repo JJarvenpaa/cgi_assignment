@@ -1,0 +1,6 @@
+#!/bin/sh
+#create a similar wrapper for the CLI itself
+cd $(dirname $0)
+PATH="$PWD/node/":"$PWD":$PATH
+node_modules/@angular/cli/bin/ng.js "$@"
+chmod +x ng

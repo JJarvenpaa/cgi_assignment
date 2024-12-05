@@ -1,0 +1,6 @@
+#!/bin/sh
+#create a convenient script to run npm from the local installation (in case you have others on your path):
+cd $(dirname $0)
+PATH="$PWD/node/":$PATH
+node "node/node_modules/npm/bin/npm-cli.js" "$@"
+chmod +x npm

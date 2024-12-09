@@ -4,9 +4,34 @@ import { RouterOutlet } from '@angular/router'
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  template: `
+  <main>
+    <div class="container">
+      <button>Lisää uusi henkilö</button>
+      <!-- TODO: make person parameters as inputs here-->
+        {{ name }}
+    </div>
+  </main>
+  <router-outlet />
+  `,
+  //templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+/*
+TODO: use this in component constructor
+class Person {
+  id: number
+  name: string
+  ssn: string 
+  nationality: string
+  language: string
+  //TODO: Should I implement familyRelations?
+  dateOfBirth: string
+  dateOfDeath?: string
+
+}
+*/
+
 export class AppComponent {
   counter: number = 0
   id: number
@@ -27,5 +52,6 @@ export class AppComponent {
     this.dateOfBirth = 'Syntymäpäivä'
     this.dateOfDeath = 'Kuolinpäivä'
   }
-
+  
 }
+

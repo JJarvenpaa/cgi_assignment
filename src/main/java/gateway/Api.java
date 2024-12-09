@@ -12,6 +12,11 @@ public class Api {
     */
     @Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder) {
-        return builder.routes().build();
+        return builder.routes() 
+            .route(p -> p
+            .path("/api/newPerson")
+            .filters(f -> f.addRequestHeader("Hello", "World"))
+            .uri("http://httpbin.org:80"))
+        .build();
     }
 }

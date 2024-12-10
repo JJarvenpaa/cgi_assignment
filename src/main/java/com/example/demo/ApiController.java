@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ApiController {
     
     ArrayList<Person> personsList = new ArrayList<Person>(); //Initialize a new array suitable for JSON data
+    public Integer counter = -1; //We want to start ID incrementing at 0
     //TODO: write personsList to a file with JSON syntax to emulate a database
 
     /* TODO: Steps for READ all functionality (GET)
@@ -30,7 +31,9 @@ public class ApiController {
     Person addNewPerson(@RequestBody Person newPerson) {
         //TODO: use the actual JSON data provided via frontend
         //Add new Person object here
-        //TODO: add id as incrementing counter
+    
+        counter++;
+        newPerson.id = counter; //Add id as incrementing counter
         newPerson.name = "testi";
         newPerson.ssn = "150796-111V";
         newPerson.address = "testikatu 1B7";

@@ -15,14 +15,11 @@ public class ApiController {
     public Integer counter = -1; //We want to start ID incrementing at 0
     //TODO: write personsList to a file with JSON syntax to emulate a database
 
-    /* TODO: Steps for READ all functionality (GET)
-     * use /api/persons route but with GET request
-     * Return personsList to here as a test
-     * 
-     */
+    
     //Method for getting all Persons
-    @GetMapping("/api/persons")
+    @GetMapping("/api/persons") // use /api/persons route but with GET request
     public ArrayList<Person> getPersons() {
+        // Return personsList to here as a test
         return personsList;
     }
     

@@ -6,19 +6,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 
 @RestController
 public class ApiController {
     
     ArrayList<Person> personsList = new ArrayList<Person>(); //Initialize a new array suitable for JSON data
-    public Integer counter = -1; //We want to start ID incrementing at 0
     //TODO: write personsList to a file with JSON syntax to emulate a database
+    public Integer counter = -1; //We want to start ID incrementing at 0
 
     
     //Method for getting all Persons
     @GetMapping("/api/persons") // use /api/persons route but with GET request
     public ArrayList<Person> getPersons() {
+        //TODO: read Persons from a json file
+        //TODO: return Persons as a json to frontend
         // Return personsList to here as a test
         return personsList;
     }
@@ -31,7 +36,7 @@ public class ApiController {
     
         counter++;
         newPerson.id = counter; //Add id as incrementing counter
-        newPerson.name = "testi";
+        newPerson.name = "testi uusi";
         newPerson.ssn = "150796-111V";
         newPerson.address = "testikatu 1B7";
         newPerson.nationality = "Suomalainen";
@@ -43,5 +48,29 @@ public class ApiController {
 
         return newPerson;
     }
+
+    //Method for modifying Person
+    @PutMapping("api/persons/{id}") //Create route for modifying Person with PUT request
+    public Person modifyPerson(@PathVariable Integer id, @RequestBody String modifiedPerson) {
+      
+        // Find Person with PUT request ID from personsList
+        Person personToModify = personsList.get(id);
+
+        //TODO: update Person with actual data provided via frontend
+        // Update Person with new data
+        personToModify.name = "testi muutos";
+        personToModify.ssn = "150796-111 muutos";
+        personToModify.address = "testikatu 1B7 muutos";
+        personToModify.nationality = "Suomalainen muutos";
+        personToModify.language = "Suomi muutos";
+        personToModify.dateOfBirth = "01.01.1990 muutos";
+        personToModify.dateOfDeath = "";
+        personsList.set(id, personToModify);
+        
+        // Return modifiedPerson
+        return personToModify;
+    }
+
+    
    
 }

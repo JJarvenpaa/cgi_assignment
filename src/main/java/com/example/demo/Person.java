@@ -3,7 +3,7 @@ package com.example.demo;
 public class Person {
     
     //TODO: how to make these private?
-    public Integer id;
+    public int id;
     public String name;
     public String ssn; //ssn = Social security number
     public String address;

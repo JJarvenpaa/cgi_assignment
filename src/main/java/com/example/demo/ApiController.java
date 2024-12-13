@@ -20,7 +20,7 @@ public class ApiController {
     //TODO: Can we use other than public in class and methods?
     ArrayList<Person> personsList = new ArrayList<Person>(); //Initialize a new array suitable for JSON data
     //TODO: write personsList to a file with JSON syntax to emulate a database
-    public Integer counter = -1; //We want to start ID incrementing at 0
+    public int counter = -1; //We want to start ID incrementing at 0
 
     
     //Method for getting all Persons
@@ -75,23 +75,24 @@ public class ApiController {
         return personToModify;
     }
 
-    //TODO: Method for removing Person
-    /**
-     * Find Person with DELETE request ID from personsList
-     * delete Person from personsList
-     * Return string with deletion confirmation and id
+    
+    
+    //fix http 405 error with DELETE request
+    // Maybe tomcat prevents it somehow?
+    // For some reason now it works after restart, leave it for now
+    
+    //Method for removing Person
+    @DeleteMapping("/api/persons/{id}")
+    public String deletePerson(@PathVariable int id) {
+        //Find Person with DELETE request ID from personsList
+        Person toRemove = personsList.get(id);
+        //delete Person from personsList
+        personsList.remove(toRemove);
 
-     */
-
-     //TODO: fix http 405 error with DELETE request
-     // Maybe tomcat prevents it somehow?
-    // @DeleteMapping("api/persons/{id}") //Create route for deleting Person with DELETE request
-     @RequestMapping(value="/api/persons/{id}", method={RequestMethod.DELETE, RequestMethod.GET})
-     public void deletePerson(@PathVariable Integer id) {
-         
-        //personsList.remove(id);
-        //return "deleted Person with ID: " + id;
-     }
+        //TODO: maybe a logger for this?
+        //Return string with deletion confirmation and id
+        return "deleted Person with ID: " + id;
+    }
 
 
     

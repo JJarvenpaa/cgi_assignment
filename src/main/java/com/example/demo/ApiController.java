@@ -55,7 +55,7 @@ public class ApiController {
 
     //Method for modifying Person
     @PutMapping("api/persons/{id}") //Create route for modifying Person with PUT request
-    public Person modifyPerson(@PathVariable Integer id, @RequestBody String modifiedPerson) {
+    public Person modifyPerson(@PathVariable int id, @RequestBody String modifiedPerson) {
       
         // Find Person with PUT request ID from personsList
         Person personToModify = personsList.get(id);

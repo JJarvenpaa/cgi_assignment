@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,7 +37,7 @@ public class ApiController {
         //Jackson does the JSON handling for us, so we only need to add the id
         counter++;
         newPerson.id = counter; //Add id as incrementing counter
-        //Populate new list with obj Person using test data
+    
         personsList.add(newPerson);
         //TODO: catch here if something goes wrong when adding Person to list
 
@@ -53,7 +51,6 @@ public class ApiController {
         //TODO: catch here if something goes wrong when updating Person to list or when person with ID is not found
         personsList.set(id, modifiedPerson);
         
-        // Return modifiedPerson
         return 201;
     }
 
@@ -72,6 +69,7 @@ public class ApiController {
         personsList.remove(toRemove);
         //TODO: try catch if something does wrong in remove
         //TODO: maybe a logger for this?
+
         return 200;
     }
 

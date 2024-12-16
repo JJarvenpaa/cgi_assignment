@@ -30,7 +30,6 @@
 		<java.version>21.0.5</java.version>	
 	</properties>
 	
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -43,8 +42,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		
-	
  </dependencies>
 
 	<build>

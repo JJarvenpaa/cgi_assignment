@@ -1,2 +1,2 @@
 chmod +x test-curl-post.sh
-curl -X POST localhost:8080/api/persons -H 'Content-type:application/json' -d '{"name": "testi testiii"}'
+curl -X POST localhost:8080/api/persons -H 'Content-type:application/json' -d '{"name": "testi uusi", "ssn": "150796-111V", "address": "testikatu 1B7", "nationality": "Suomalainen", "language": "Suomi", "dateOfBirth": "01.01.1990", "dateOfDeath": "01.01.2012"}'

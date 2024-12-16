@@ -35,20 +35,12 @@ public class ApiController {
     //Method for creating new Person
     @PostMapping("/api/persons") //create a route for /api/persons for POST requests
     Person addNewPerson(@RequestBody Person newPerson) {
-        //TODO: use the actual JSON data provided via frontend
-        //Add new Person object here
-    
+        //Jackson does the JSON handling for us, so we only need to add the id
         counter++;
         newPerson.id = counter; //Add id as incrementing counter
-        newPerson.name = "testi uusi";
-        newPerson.ssn = "150796-111V";
-        newPerson.address = "testikatu 1B7";
-        newPerson.nationality = "Suomalainen";
-        newPerson.language = "Suomi";
-        newPerson.dateOfBirth = "01.01.1990";
-        newPerson.dateOfDeath = "";
         //Populate new list with obj Person using test data
         personsList.add(newPerson);
+        //TODO: catch here if something goes wrong when adding Person to list
 
         return newPerson;
     }

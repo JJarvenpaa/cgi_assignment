@@ -1,2 +1,2 @@
 chmod +x test-curl-put.sh
-curl -X PUT localhost:8080/api/persons/2 -H 'Content-type:application/json' -d '{"name": "testi testiii"}'
+curl -X PUT localhost:8080/api/persons/0 -H 'Content-type:application/json' -d '{"name": "testi muutos", "ssn": "150796-111V muutos", "address": "testikatu 1B7 muutos", "nationality": "Suomalainen muutos", "language": "Suomi muutos", "dateOfBirth": "01.01.1990 muutos", "dateOfDeath": "01.01.2012 muutos"}'

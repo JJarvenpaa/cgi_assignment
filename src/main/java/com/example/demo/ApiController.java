@@ -21,6 +21,7 @@ public class ApiController {
     ArrayList<Person> personsList = new ArrayList<Person>(); //Initialize a new array suitable for JSON data
     //TODO: write personsList to a file with JSON syntax to emulate a database
     public int counter = -1; //We want to start ID incrementing at 0
+    //TODO: return http codes in methods
 
     
     //Method for getting all Persons
@@ -47,24 +48,13 @@ public class ApiController {
 
     //Method for modifying Person
     @PutMapping("api/persons/{id}") //Create route for modifying Person with PUT request
-    public Person modifyPerson(@PathVariable int id, @RequestBody String modifiedPerson) {
+    public Person modifyPerson(@PathVariable int id, @RequestBody Person modifiedPerson) {
       
-        // Find Person with PUT request ID from personsList
-        Person personToModify = personsList.get(id);
-
-        //TODO: update Person with actual data provided via frontend
-        // Update Person with new data
-        personToModify.name = "testi muutos";
-        personToModify.ssn = "150796-111 muutos";
-        personToModify.address = "testikatu 1B7 muutos";
-        personToModify.nationality = "Suomalainen muutos";
-        personToModify.language = "Suomi muutos";
-        personToModify.dateOfBirth = "01.01.1990 muutos";
-        personToModify.dateOfDeath = "";
-        personsList.set(id, personToModify);
+        //TODO: catch here if something goes wrong when updating Person to list or when person with ID is not found
+        Person modifiedConfirmation = personsList.set(id, modifiedPerson);
         
         // Return modifiedPerson
-        return personToModify;
+        return modifiedConfirmation;
     }
 
     

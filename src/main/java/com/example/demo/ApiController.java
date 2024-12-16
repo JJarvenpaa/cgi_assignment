@@ -35,7 +35,7 @@ public class ApiController {
     
     //Method for creating new Person
     @PostMapping("/api/persons") //create a route for /api/persons for POST requests
-    Person addNewPerson(@RequestBody Person newPerson) {
+    int addNewPerson(@RequestBody Person newPerson) {
         //Jackson does the JSON handling for us, so we only need to add the id
         counter++;
         newPerson.id = counter; //Add id as incrementing counter
@@ -43,18 +43,18 @@ public class ApiController {
         personsList.add(newPerson);
         //TODO: catch here if something goes wrong when adding Person to list
 
-        return newPerson;
+        return 201;
     }
 
     //Method for modifying Person
     @PutMapping("api/persons/{id}") //Create route for modifying Person with PUT request
-    public Person modifyPerson(@PathVariable int id, @RequestBody Person modifiedPerson) {
+    public int modifyPerson(@PathVariable int id, @RequestBody Person modifiedPerson) {
       
         //TODO: catch here if something goes wrong when updating Person to list or when person with ID is not found
-        Person modifiedConfirmation = personsList.set(id, modifiedPerson);
+        personsList.set(id, modifiedPerson);
         
         // Return modifiedPerson
-        return modifiedConfirmation;
+        return 201;
     }
 
     
@@ -65,15 +65,14 @@ public class ApiController {
     
     //Method for removing Person
     @DeleteMapping("/api/persons/{id}")
-    public String deletePerson(@PathVariable int id) {
+    public int deletePerson(@PathVariable int id) {
         //Find Person with DELETE request ID from personsList
         Person toRemove = personsList.get(id);
         //delete Person from personsList
         personsList.remove(toRemove);
-
+        //TODO: try catch if something does wrong in remove
         //TODO: maybe a logger for this?
-        //Return string with deletion confirmation and id
-        return "deleted Person with ID: " + id;
+        return 200;
     }
 
 

@@ -1,8 +1,11 @@
-<main>
+
   <div class="container">
-    <button (click)="addPerson()">Lisää uusi henkilö</button>
+    <form (ngSubmit)="onSubmit()"> 
+    <button>Lisää uusi henkilö</button>
     <!-- TODO: make person parameters as inputs here-->
-      {{ name }}
+    <input type="text" class="form-control" id="name" required
+    [(ngModel)]="person.name" name="name">
+
+    </form>
   </div>
-</main>
 <router-outlet />

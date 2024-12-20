@@ -1,11 +1,29 @@
 
-  <div class="container">
+  <div class="form-person-container">
     <form (ngSubmit)="onSubmit()"> 
-    <button>Lisää uusi henkilö</button>
-    <!-- TODO: make person parameters as inputs here-->
-    <input type="text" class="form-control" id="name" required
-    [(ngModel)]="person.name" name="name">
-
+      Nimi*
+      <input type="text" class="form-person" id="name" required
+      [(ngModel)]="person.name" name="name">
+      Syntymäpäivä*
+      <input type="date" class="form-person" id="dateOfBirth" required
+      [(ngModel)]="person.dateOfBirth" name="dateOfBirth">
+      Kansalaisuus*
+      <input type="text" class="form-person" id="nationality" required
+      [(ngModel)]="person.nationality" name="nationality">
+      Äidinkieli*
+      <input type="text" class="form-person" id="language" required
+      [(ngModel)]="person.language" name="language">
+      Henkilötunnus
+      <input type="text" class="form-person" id="ssn"
+      [(ngModel)]="person.ssn" name="ssn">
+      Osoite
+      <input type="text" class="form-person" id="address" 
+      [(ngModel)]="person.address" name="address">
+      Kuolinpäivä
+      <input type="date" class="form-person" id="dateOfDeath"
+      [(ngModel)]="person.dateOfDeath" name="dateOfDeath">
+      <button>Lisää uusi henkilö</button>
+      
     </form>
   </div>
 <router-outlet />

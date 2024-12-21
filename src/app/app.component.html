@@ -1,6 +1,7 @@
 
   <div class="form-person-container">
     <form (ngSubmit)="onSubmit()"> 
+      <!-- TODO: show error when required fields are not typed and disable button-->
       Nimi*
       <input type="text" class="form-person" id="name" required
       [(ngModel)]="person.name" name="name">
@@ -25,5 +26,14 @@
       <button>Lisää uusi henkilö</button>
       
     </form>
+  </div>
+
+  <div class="persons-container">
+    @for (person of persons; track person.id) {
+      <li>
+        {{ person.name }}
+      </li>
+    }
+   
   </div>
 <router-outlet />

@@ -31,6 +31,7 @@
   <div class="persons-container">
     @for (person of persons; track person.id) {
       <li>
+        Tunniste {{ person.id }}
         Nimi  {{ person.name }}
         Syntymäpäivä {{ person.dateOfBirth }}
         Kansalaisuus {{ person.nationality }}
@@ -38,6 +39,7 @@
         Henkilötunnus {{ person.ssn }}
         Osoite {{ person.address }}
         Kuolinpäivä {{ person.dateOfDeath }}
+        <button (click)="onModify(person.id)">Muokkaa</button>
       </li>
     }
    

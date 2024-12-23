@@ -31,7 +31,13 @@
   <div class="persons-container">
     @for (person of persons; track person.id) {
       <li>
-        {{ person.name }}
+        Nimi  {{ person.name }}
+        Syntymäpäivä {{ person.dateOfBirth }}
+        Kansalaisuus {{ person.nationality }}
+        Äidinkieli {{ person.language }}
+        Henkilötunnus {{ person.ssn }}
+        Osoite {{ person.address }}
+        Kuolinpäivä {{ person.dateOfDeath }}
       </li>
     }
    

@@ -1,6 +1,7 @@
 
   <div class="form-person-container">
     <form (ngSubmit)="onAddSubmit()"> 
+
       <!-- TODO: show error when required fields are not typed and disable button-->
       Nimi*
       <input type="text" class="form-person" id="name" required
@@ -30,9 +31,12 @@
 
   <div class="persons-container">
     @for (person of persons; track person.id) {
-      @if (modifying) {
+
+      @if (modifying) 
+      {
          <!-- TODO: show error when required fields are not typed and disable button-->
         <form (ngSubmit)="onModifySubmit(person.id)">
+
           Nimi*
           <input type="text" class="form-person" id="name" required
           [(ngModel)]="modifyPerson.name" name="name">
@@ -54,22 +58,31 @@
           Kuolinpäivä
           <input type="date" class="form-person" id="dateOfDeath"
           [(ngModel)]="modifyPerson.dateOfDeath" name="dateOfDeath">
+          
           <button>Tallenna muutokset</button>
+
         </form>
+
         <button (click)="cancelModify()">Peruuta</button>
+
       } @else {
-      <li>
-        Tunniste {{ person.id }}
-        Nimi  {{ person.name }}
-        Syntymäpäivä {{ person.dateOfBirth }}
-        Kansalaisuus {{ person.nationality }}
-        Äidinkieli {{ person.language }}
-        Henkilötunnus {{ person.ssn }}
-        Osoite {{ person.address }}
-        Kuolinpäivä {{ person.dateOfDeath }}
-        <button (click)="startModify()">Muokkaa</button>
-      </li>
+        
+        <li>
+          Tunniste {{ person.id }}
+          Nimi  {{ person.name }}
+          Syntymäpäivä {{ person.dateOfBirth }}
+          Kansalaisuus {{ person.nationality }}
+          Äidinkieli {{ person.language }}
+          Henkilötunnus {{ person.ssn }}
+          Osoite {{ person.address }}
+          Kuolinpäivä {{ person.dateOfDeath }}
+
+          <button (click)="startModify()">Muokkaa</button>
+        </li>
+
       }
+
+      <button (click)="removePerson(person.name, person.id)">Poista</button>
     }
    
   </div>

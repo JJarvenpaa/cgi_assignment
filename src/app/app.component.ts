@@ -34,7 +34,7 @@ export class AppComponent {
 
   persons: any //TODO: try to type this 
   ngOnInit() {
-    //TODO: Make this its own service and a reusable sendRequest method that only takes parameters that define the request type
+    //TODO: Make this its own service and a reusable sendRequest method that only takes parameters that define the request type and does the error handling
     this.fetchPersonsRequest()
   }
   
@@ -51,13 +51,25 @@ export class AppComponent {
   startModify() { this.modifying = true }
 
   cancelModify() { this.modifying = false }
+
+  removePerson(name: string, personID: number | null) {
+    if(confirm('Oletko varma että haluat poistaa tämän henkilön tiedot? ' + name)) {
+      this.removePersonRequest(personID)
+    }
+  }
+
+  removePersonRequest(personId: number | null) {
+    this.http.delete('http://localhost:8080/api/persons/' + personId).subscribe(response => {console.log('Response from API: ', response)})
+  }
   
-  modifyPersonRequest(personId: number | null ) {
+  modifyPersonRequest(personId: number | null) {
     //TODO validate Person obj before sending request
     this.http.put('http://localhost:8080/api/persons/' + personId, this.modifyPerson).subscribe(response => { console.log('Response from API: ', response)})
+    
     this.modifying = false
 
   }
+  
   addPersonRequest(person: Person) {
   //TODO: validate Person obj before sending request
   //Send a POST request to our backend with Person obj

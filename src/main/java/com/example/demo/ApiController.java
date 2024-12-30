@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import java.util.ArrayList;
-
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
 
 @RestController
 public class ApiController {
@@ -26,8 +24,8 @@ public class ApiController {
     public ArrayList<Person> getPersons() {
         //TODO: read Persons from a json file
         //TODO: return Persons as a json to frontend
-        // Return personsList to here as a test
         return personsList;
+
     }
     
     //Method for creating new Person
@@ -41,6 +39,7 @@ public class ApiController {
         //TODO: catch here if something goes wrong when adding Person to list
 
         return 201;
+
     }
 
     //Method for modifying Person
@@ -51,11 +50,12 @@ public class ApiController {
         personsList.set(id, modifiedPerson);
         
         return 201;
+
     }
 
     
     
-    //fix http 405 error with DELETE request
+    // fix http 405 error with DELETE request
     // Maybe tomcat prevents it somehow?
     // For some reason now it works after restart, leave it for now
     
@@ -70,9 +70,7 @@ public class ApiController {
         //TODO: maybe a logger for this?
 
         return 200;
+
     }
 
-
-    
-   
 }

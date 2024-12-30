@@ -31,21 +31,24 @@ export class AppComponent {
   )
   
   modifying = false
-
   persons: any //TODO: try to type this 
+
   ngOnInit() {
     //TODO: Make this its own service and a reusable sendRequest method that only takes parameters that define the request type and does the error handling
     this.fetchPersonsRequest()
+
   }
   
  onAddSubmit() {
     this.addPersonRequest(this.person)
     //TODO: make fetch async, so it happens after the new Person is added, not at the same time
     this.fetchPersonsRequest()
+
   }
 
   onModifySubmit(personId: number | null) {
     this.modifyPersonRequest(personId)
+
   }
 
   startModify() { this.modifying = true }
@@ -56,6 +59,7 @@ export class AppComponent {
     if(confirm('Oletko varma että haluat poistaa tämän henkilön tiedot? ' + name)) {
       this.removePersonRequest(personID)
     }
+
   }
 
   removePersonRequest(personId: number | null) {
@@ -72,7 +76,6 @@ export class AppComponent {
   
   addPersonRequest(person: Person) {
   //TODO: validate Person obj before sending request
-  //Send a POST request to our backend with Person obj
   this.http.post('http://localhost:8080/api/persons', person).subscribe(response => {  console.log('Response from API: ', response);});
   
   }
@@ -80,5 +83,6 @@ export class AppComponent {
   fetchPersonsRequest() {
     this.http.get('http://localhost:8080/api/persons').subscribe(persons => { this.persons = persons })
   }
+
 }
 

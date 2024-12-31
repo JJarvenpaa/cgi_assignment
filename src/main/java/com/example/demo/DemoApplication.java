@@ -12,7 +12,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 		//TODO: create array logic here and move it away from here when it works
 		// So the assignment is to check between array numbers how many numbers fit between them the least, in other words, how many times can we increment the first number by 1 between them (until the number to compare with an offset of -1)
-		int[] test1 = {1, 4, 10};
+		int[] test1 = {1, 10, 4};
 		//TODO: find out if the array size is always fixed to 2 (3 values)
 		//TODO: this comparison should check all values between each other so 1 should against 4 and 10, 4 should check against 1 and 10, 10 should check against 4 and 1 etc
 		int numbersToFitBetween = 0;	
@@ -21,9 +21,19 @@ public class DemoApplication {
 			
  			int nextNumberToCompare = test1[i + 1];
 			int currentNumbersToFitBetween = 0;
-			for(int j = 0; test1[i] + j < nextNumberToCompare - 1; j++) {
-				currentNumbersToFitBetween++;
-				System.out.println("numbers to fit: " + numbersToFitBetween);
+			if(test1[i] < nextNumberToCompare) {
+
+			//incrementing happens if currentnumber < nextnumber, decreasing happens if other way around
+				for(int j = 0; test1[i] + j < nextNumberToCompare - 1; j++) {
+					currentNumbersToFitBetween++;
+				}
+
+			} else {
+
+				for(int j = 0; test1[i] - j > nextNumberToCompare + 1; j++) {
+					currentNumbersToFitBetween++;
+				}
+
 			}
 
 			//On first iteration we have to get the first value to compare later

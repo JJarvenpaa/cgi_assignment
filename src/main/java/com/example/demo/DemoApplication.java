@@ -15,38 +15,62 @@ public class DemoApplication {
 		int[] test1 = {1, 10, 4};
 		//TODO: find out if the array size is always fixed to 2 (3 values)
 		//TODO: this comparison should check all values between each other so 1 should against 4 and 10, 4 should check against 1 and 10, 10 should check against 4 and 1 etc
-		int numbersToFitBetween = 0;	
+		int numberCountBetween = 0;	
 		for (int i = 0; i < test1.length; i++) {
 			if(i + 1 == test1.length) {break;}
 			
- 			int nextNumberToCompare = test1[i + 1];
-			int currentNumbersToFitBetween = 0;
-			if(test1[i] < nextNumberToCompare) {
+ 			
+			int currentNumberCountBetween = 0;
 
-			//incrementing happens if currentnumber < nextnumber, decreasing happens if other way around
-				for(int j = 0; test1[i] + j < nextNumberToCompare - 1; j++) {
-					currentNumbersToFitBetween++;
-				}
+			
+			currentNumberCountBetween = compareNumbersToMax(test1.length, i, test1);
 
-			} else {
-
-				for(int j = 0; test1[i] - j > nextNumberToCompare + 1; j++) {
-					currentNumbersToFitBetween++;
-				}
-
-			}
 
 			//On first iteration we have to get the first value to compare later
 			if(i == 0) { 
-				numbersToFitBetween = currentNumbersToFitBetween; 
+				numberCountBetween = currentNumberCountBetween; 
 			} 
-			else if(currentNumbersToFitBetween <= numbersToFitBetween && currentNumbersToFitBetween > 0) { 
-				numbersToFitBetween = currentNumbersToFitBetween; 
+			else if(currentNumberCountBetween <= numberCountBetween && currentNumberCountBetween > 0) { 
+				numberCountBetween = currentNumberCountBetween; 
 			} 
 		}
 
-		System.out.println("vastaus on: " + numbersToFitBetween);
+		System.out.println("vastaus on: " + numberCountBetween);
 
+	}
+
+	public static int compareNumbersToMax(int max, int currentIndex, int[] array) {
+		int numberCountBetween = 0;
+
+		//TODO: extend logic to check if i > 0 (not first iteration) we have to compare to previous numbers also
+		while(currentIndex < max - 1) {
+
+			numberCountBetween = countNumbersBetween(currentIndex, array);
+			currentIndex++;
+		}
+
+		return numberCountBetween;
+	}
+
+	public static int countNumbersBetween(int currentIndex, int[] array) {
+		int numberCountBetween = 0; 
+		
+		int nextNumberToCompare = array[currentIndex + 1];
+		if(array[currentIndex] < nextNumberToCompare) {
+			//incrementing happens if currentnumber < nextnumber, decreasing happens if other way around
+			for(int j = 0; array[currentIndex] + j < nextNumberToCompare - 1; j++) {
+				numberCountBetween++;
+			}
+
+		} else {
+
+			for(int j = 0; array[currentIndex] - j > nextNumberToCompare + 1; j++) {
+				numberCountBetween++;
+			}
+
+		}
+
+		return numberCountBetween;
 	}
 
 

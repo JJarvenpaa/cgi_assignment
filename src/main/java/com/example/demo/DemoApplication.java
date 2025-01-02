@@ -23,7 +23,7 @@ public class DemoApplication {
 			int currentNumberCountBetween = 0;
 
 			
-			currentNumberCountBetween = compareNumbersToMax(test1.length, i, test1);
+			currentNumberCountBetween = compareNumbersToLength(i, test1);
 
 
 			//On first iteration we have to get the first value to compare later
@@ -39,32 +39,32 @@ public class DemoApplication {
 
 	}
 
-	public static int compareNumbersToMax(int max, int currentIndex, int[] array) {
+	public static int compareNumbersToLength(int currentIndex, int[] array) {
 		int numberCountBetween = 0;
-
+		int startNumberIndex = currentIndex;
 		//TODO: extend logic to check if i > 0 (not first iteration) we have to compare to previous numbers also
-		while(currentIndex < max - 1) {
+		while(currentIndex < array.length - 1) {
 
-			numberCountBetween = countNumbersBetween(currentIndex, array);
+			numberCountBetween = countNumbersBetween(startNumberIndex, currentIndex, array);
 			currentIndex++;
 		}
 
 		return numberCountBetween;
 	}
 
-	public static int countNumbersBetween(int currentIndex, int[] array) {
+	public static int countNumbersBetween(int startNumberIndex, int currentIndex, int[] array) {
 		int numberCountBetween = 0; 
-		
 		int nextNumberToCompare = array[currentIndex + 1];
-		if(array[currentIndex] < nextNumberToCompare) {
+
+		if(array[startNumberIndex] < nextNumberToCompare) {
 			//incrementing happens if currentnumber < nextnumber, decreasing happens if other way around
-			for(int j = 0; array[currentIndex] + j < nextNumberToCompare - 1; j++) {
+			for(int j = 0; array[startNumberIndex] + j < nextNumberToCompare - 1; j++) {
 				numberCountBetween++;
 			}
 
 		} else {
 
-			for(int j = 0; array[currentIndex] - j > nextNumberToCompare + 1; j++) {
+			for(int j = 0; array[startNumberIndex] - j > nextNumberToCompare + 1; j++) {
 				numberCountBetween++;
 			}
 

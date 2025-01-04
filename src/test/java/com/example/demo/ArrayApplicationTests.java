@@ -13,12 +13,19 @@ class ArrayApplicationTests {
 	private ArrayApplication arrayApp;
 
 	@Test
-	void OneLeastNumberBigger() {
+	void oneLeastNumber() {
 		int[] testArray = {1, 4, 10, 15};
 		int answer = arrayApp.leastNumbersBetween(testArray);
 		assertEquals(2, answer);
 	}
 
-	
+	@Test
+	void sameNumbersWithLeast() {
+		int[] testArray = {2, 4, 2, 4};
+		int answer = arrayApp.leastNumbersBetween(testArray);
+		assertEquals(1, answer);
+	}
+
+
 
 }

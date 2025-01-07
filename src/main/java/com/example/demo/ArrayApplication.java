@@ -75,4 +75,3 @@ public class ArrayApplication {
 		return numberCountBetween;
 	}
 }
-

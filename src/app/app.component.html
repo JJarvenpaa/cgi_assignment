@@ -1,31 +1,37 @@
-
+<div class="app-container">
   <div class="form-person-container">
     <form (ngSubmit)="onAddSubmit()"> 
-
       <!-- TODO: show error when required fields are not typed and disable button-->
-      Nimi*
+      <label for="name">Nimi*</label>
       <input type="text" class="form-person" id="name" required
       [(ngModel)]="person.name" name="name">
-      Syntymäpäivä*
+      
+      <label for="dateOfBirth">Syntymäpäivä*</label>
       <input type="date" class="form-person" id="dateOfBirth" required
       [(ngModel)]="person.dateOfBirth" name="dateOfBirth">
-      Kansalaisuus*
+      
+      <label for="nationality">Kansalaisuus*</label>
       <input type="text" class="form-person" id="nationality" required
       [(ngModel)]="person.nationality" name="nationality">
-      Äidinkieli*
+      
+      <label for="language">Äidinkieli*</label>
       <input type="text" class="form-person" id="language" required
       [(ngModel)]="person.language" name="language">
-      Henkilötunnus
+      
+      <label for="ssn">Henkilötunnus*</label>
       <input type="text" class="form-person" id="ssn"
       [(ngModel)]="person.ssn" name="ssn">
-      Osoite
+      
+      <label for="address">Osoite</label>
       <input type="text" class="form-person" id="address" 
       [(ngModel)]="person.address" name="address">
-      Kuolinpäivä
+      
+      <label for="dateOfDeath">Kuolinpäivä</label>
       <input type="date" class="form-person" id="dateOfDeath"
       [(ngModel)]="person.dateOfDeath" name="dateOfDeath">
-      <button>Lisää uusi henkilö</button>
       
+      <button>Lisää uusi henkilö</button>
+
     </form>
   </div>
 
@@ -36,31 +42,35 @@
       {
          <!-- TODO: show error when required fields are not typed and disable button-->
         <form (ngSubmit)="onModifySubmit(person.id)">
-
-          Nimi*
+          <label for="name">Nimi*</label>
           <input type="text" class="form-person" id="name" required
-          [(ngModel)]="modifyPerson.name" name="name">
-          Syntymäpäivä*
-          <input type="date" class="form-person" id="dateOfBirth" required
-          [(ngModel)]="modifyPerson.dateOfBirth" name="dateOfBirth">
-          Kansalaisuus*
-          <input type="text" class="form-person" id="nationality" required
-          [(ngModel)]="modifyPerson.nationality" name="nationality">
-          Äidinkieli*
-          <input type="text" class="form-person" id="language" required
-          [(ngModel)]="modifyPerson.language" name="language">
-          Henkilötunnus
-          <input type="text" class="form-person" id="ssn"
-          [(ngModel)]="modifyPerson.ssn" name="ssn">
-          Osoite
-          <input type="text" class="form-person" id="address" 
-          [(ngModel)]="modifyPerson.address" name="address">
-          Kuolinpäivä
-          <input type="date" class="form-person" id="dateOfDeath"
-          [(ngModel)]="modifyPerson.dateOfDeath" name="dateOfDeath">
+          [(ngModel)]="person.name" name="name">
           
-          <button>Tallenna muutokset</button>
-
+          <label for="dateOfBirth">Syntymäpäivä*</label>
+          <input type="date" class="form-person" id="dateOfBirth" required
+          [(ngModel)]="person.dateOfBirth" name="dateOfBirth">
+          
+          <label for="nationality">Kansalaisuus*</label>
+          <input type="text" class="form-person" id="nationality" required
+          [(ngModel)]="person.nationality" name="nationality">
+          
+          <label for="language">Äidinkieli*</label>
+          <input type="text" class="form-person" id="language" required
+          [(ngModel)]="person.language" name="language">
+          
+          <label for="ssn">Henkilötunnus*</label>
+          <input type="text" class="form-person" id="ssn"
+          [(ngModel)]="person.ssn" name="ssn">
+          
+          <label for="address">Osoite</label>
+          <input type="text" class="form-person" id="address" 
+          [(ngModel)]="person.address" name="address">
+          
+          <label for="dateOfDeath">Kuolinpäivä</label>
+          <input type="date" class="form-person" id="dateOfDeath"
+          [(ngModel)]="person.dateOfDeath" name="dateOfDeath">
+          
+          <button>Lisää uusi henkilö</button>
         </form>
 
         <button (click)="cancelModify()">Peruuta</button>
@@ -86,4 +96,5 @@
     }
    
   </div>
+<div>
 <router-outlet />

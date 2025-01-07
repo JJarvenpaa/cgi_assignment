@@ -1,0 +1,25 @@
+.app-container {
+   margin: 3em 10em 5em 10em;
+   padding: 0;
+}
+
+
+.form-person {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 2em;
+    border-color: black;
+    border-style: solid;
+    flex-wrap: wrap;
+}
+
+
+.persons-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 5em;
+    border-color: black;
+    border-style: solid
+}

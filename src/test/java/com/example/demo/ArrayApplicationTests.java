@@ -13,7 +13,7 @@ class ArrayApplicationTests {
 	private ArrayApplication arrayApp;
 
 	@Test
-	//Only the first number has least numbers between and 1 < 4
+	//Only the second number has least numbers between and 1 < 4
 	void oneLeastNumberSmaller() {
 		int[] testArray = {15, 1, 4, 10};
 		int answer = arrayApp.leastNumbersBetween(testArray);
@@ -43,7 +43,4 @@ class ArrayApplicationTests {
 		int answer = arrayApp.leastNumbersBetween(testArray);
 		assertEquals(0, answer);
 	}
-
-
-
 }

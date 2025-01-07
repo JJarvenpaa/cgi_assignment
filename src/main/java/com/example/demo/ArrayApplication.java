@@ -3,26 +3,26 @@ package com.example.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 @SpringBootApplication
-public class DemoApplication {
+public class ArrayApplication {
 	
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-		leastNumbersBetween();
+    
+    public static void main(String[] args) {
+		SpringApplication.run(ArrayApplication.class, args);
+		//leastNumbersBetween();
 	}
 
-	public static int leastNumbersBetween() {
+	public int leastNumbersBetween(int[] array) {
 		// So the assignment is to check between array numbers how many numbers fit between them the least, in other words, how many times can we increment the first number by 1 between them (until the number to compare with an offset of -1)
 		//TODO: this should be tested with spring boot unit testing
-		int[] test1 = {1, 3, 5, 7};
+		//int[] test1 = {1, 3, 5, 7};
 		int numberCountBetween = 0;	
 
-		for (int i = 0; i < test1.length; i++) {
+		for (int i = 0; i < array.length; i++) {
 
-			if(i + 1 == test1.length) break; // i + 1 to prevent array index out of bounds
+			if(i + 1 == array.length) break; // i + 1 to prevent array index out of bounds
 			
-			numberCountBetween = compareNumbersUntilLast(i, test1, numberCountBetween);
+			numberCountBetween = compareNumbersUntilLast(i, array, numberCountBetween);
 		}
 		//System.out.println(numberCountBetween);
 		return numberCountBetween;

@@ -7,13 +7,21 @@
 .form-person {
     display: flex;
     text-align: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-bottom: 2em;
     border-color: black;
     border-style: solid;
     flex-wrap: wrap;
 }
 
+.form-person > div {
+    margin-top: 1em;
+}
+
+.form-person button{
+   width: 100%;
+   margin-bottom: 1em;
+}
 
 .persons-container {
     display: flex;

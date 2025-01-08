@@ -18,6 +18,10 @@
     margin-top: 1em;
 }
 
+.form-person input {
+    margin-top: 0.5em;
+}
+
 .form-person button{
    width: 100%;
    margin-bottom: 1em;

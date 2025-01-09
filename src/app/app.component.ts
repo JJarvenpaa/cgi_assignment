@@ -23,13 +23,6 @@ export class AppComponent {
     '',
   )
 
-  modifyPerson = new Person(
-    '',
-    '',
-    '',
-    '',
-  )
-  
   modifying = false
   persons: any //TODO: try to type this 
 
@@ -46,8 +39,8 @@ export class AppComponent {
 
   }
 
-  onModifySubmit(personId: number | null) {
-    this.modifyPersonRequest(personId)
+  onModifySubmit(personId: number | null, person: Person) {
+    this.modifyPersonRequest(personId, person)
 
   }
 
@@ -66,10 +59,9 @@ export class AppComponent {
     this.http.delete('http://localhost:8080/api/persons/' + personId).subscribe(response => {console.log('Response from API: ', response)})
   }
   
-  modifyPersonRequest(personId: number | null) {
+  modifyPersonRequest(personId: number | null, person: Person) {
     //TODO validate Person obj before sending request
-    this.http.put('http://localhost:8080/api/persons/' + personId, this.modifyPerson).subscribe(response => { console.log('Response from API: ', response)})
-    
+    this.http.put('http://localhost:8080/api/persons/' + personId, person).subscribe(response => { console.log('Response from API: ', response)})
     this.modifying = false
 
   }

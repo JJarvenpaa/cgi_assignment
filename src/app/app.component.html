@@ -35,29 +35,29 @@
       @if (modifying) 
       {
          <!-- TODO: show error when required fields are not typed and disable button-->
-        <form (ngSubmit)="onModifySubmit(person.id)">
+        <form (ngSubmit)="onModifySubmit(person.id, person)">
 
           Nimi*
           <input type="text" class="form-person" id="name" required
-          [(ngModel)]="modifyPerson.name" name="name">
+          [(ngModel)]="person.name" name="name">
           Syntymäpäivä*
           <input type="date" class="form-person" id="dateOfBirth" required
-          [(ngModel)]="modifyPerson.dateOfBirth" name="dateOfBirth">
+          [(ngModel)]="person.dateOfBirth" name="dateOfBirth">
           Kansalaisuus*
           <input type="text" class="form-person" id="nationality" required
-          [(ngModel)]="modifyPerson.nationality" name="nationality">
+          [(ngModel)]="person.nationality" name="nationality">
           Äidinkieli*
           <input type="text" class="form-person" id="language" required
-          [(ngModel)]="modifyPerson.language" name="language">
+          [(ngModel)]="person.language" name="language">
           Henkilötunnus
           <input type="text" class="form-person" id="ssn"
-          [(ngModel)]="modifyPerson.ssn" name="ssn">
+          [(ngModel)]="person.ssn" name="ssn">
           Osoite
           <input type="text" class="form-person" id="address" 
-          [(ngModel)]="modifyPerson.address" name="address">
+          [(ngModel)]="person.address" name="address">
           Kuolinpäivä
           <input type="date" class="form-person" id="dateOfDeath"
-          [(ngModel)]="modifyPerson.dateOfDeath" name="dateOfDeath">
+          [(ngModel)]="person.dateOfDeath" name="dateOfDeath">
           
           <button>Tallenna muutokset</button>
 

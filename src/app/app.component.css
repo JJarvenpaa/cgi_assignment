@@ -34,10 +34,14 @@
 }
 
 .persons-container {
-    display: flex;
-    text-align: center;
     justify-content: center;
     margin-bottom: 5em;
     border-color: black;
     border-style: solid
+}
+
+.person-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }

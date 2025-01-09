@@ -23,8 +23,8 @@
 }
 
 .form-person button{
-   width: 100%;
    margin-bottom: 1em;
+   align-self: flex-end;
 }
 
 .persons-container {

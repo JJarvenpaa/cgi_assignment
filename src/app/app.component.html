@@ -1,40 +1,44 @@
 <div class="app-container">
+  <div class="heading-container">
+    <h2>Lisää uusi henkilö</h2>
+  </div>
     <form class="form-person" (ngSubmit)="onAddSubmit()"> 
       <!-- TODO: show error when required fields are not typed and <div>disable button-->
+      <!-- TODO: make more responsive when small size -->
       <div>
-      <label for="name">Nimi*</label>
-      <input type="text" class="form-person" id="name" required
-      [(ngModel)]="person.name" name="name">
+        <label for="name">Nimi*</label>
+        <input type="text" class="form-person" id="name" required
+        [(ngModel)]="person.name" name="name">
       </div>
       <div>
-      <label for="dateOfBirth">Syntymäpäivä*</label>
-      <input type="date" class="form-person" id="dateOfBirth" required
-      [(ngModel)]="person.dateOfBirth" name="dateOfBirth">
+        <label for="dateOfBirth">Syntymäpäivä*</label>
+        <input type="date" class="form-person" id="dateOfBirth" required
+        [(ngModel)]="person.dateOfBirth" name="dateOfBirth">
       </div>
       <div>
-      <label for="nationality">Kansalaisuus*</label>
-      <input type="text" class="form-person" id="nationality" required
-      [(ngModel)]="person.nationality" name="nationality">
+        <label for="nationality">Kansalaisuus*</label>
+        <input type="text" class="form-person" id="nationality" required
+        [(ngModel)]="person.nationality" name="nationality">
       </div>
       <div>
-      <label for="language">Äidinkieli*</label>
-      <input type="text" class="form-person" id="language" required
-      [(ngModel)]="person.language" name="language">
+        <label for="language">Äidinkieli*</label>
+        <input type="text" class="form-person" id="language" required
+        [(ngModel)]="person.language" name="language">
       </div>
       <div>
-      <label for="ssn">Henkilötunnus*</label>
-      <input type="text" class="form-person" id="ssn"
-      [(ngModel)]="person.ssn" name="ssn">
+        <label for="ssn">Henkilötunnus</label>
+        <input type="text" class="form-person" id="ssn"
+        [(ngModel)]="person.ssn" name="ssn">
       </div>
       <div>
-      <label for="address">Osoite</label>
-      <input type="text" class="form-person" id="address" 
-      [(ngModel)]="person.address" name="address">
+        <label for="address">Osoite</label>
+        <input type="text" class="form-person" id="address" 
+        [(ngModel)]="person.address" name="address">
       </div>
       <div>
-      <label for="dateOfDeath">Kuolinpäivä</label>
-      <input type="date" class="form-person" id="dateOfDeath"
-      [(ngModel)]="person.dateOfDeath" name="dateOfDeath">
+        <label for="dateOfDeath">Kuolinpäivä</label>
+        <input type="date" class="form-person" id="dateOfDeath"
+        [(ngModel)]="person.dateOfDeath" name="dateOfDeath">
       </div>
       
       <button>Lisää uusi henkilö</button>
@@ -42,61 +46,74 @@
     </form>
   </div>
 
+  <div class="heading-container">
+    <h2>Henkilöt:</h2>
+  </div>
   <div class="persons-container">
     @for (person of persons; track person.id) {
 
       @if (modifying) 
       {
          <!-- TODO: show error when required fields are not typed and disable button-->
-        <form (ngSubmit)="onModifySubmit(person.id)">
-          <label for="name">Nimi*</label>
-          <input type="text" class="form-person" id="name" required
-          [(ngModel)]="person.name" name="name">
+        <form class="form-person" (ngSubmit)="onModifySubmit(person.id)">
+           <!-- TODO: make more responsive when small size -->
+          <div>
+            <label for="name">Nimi*</label>
+            <input type="text" class="form-person" id="name" required
+            [(ngModel)]="person.name" name="name">
+          </div>
+          <div>
+            <label for="dateOfBirth">Syntymäpäivä*</label>
+            <input type="date" class="form-person" id="dateOfBirth" required
+            [(ngModel)]="person.dateOfBirth" name="dateOfBirth">
+          </div>
+          <div>
+            <label for="nationality">Kansalaisuus*</label>
+            <input type="text" class="form-person" id="nationality" required
+            [(ngModel)]="person.nationality" name="nationality">
+          </div>
+          <div>
+            <label for="language">Äidinkieli*</label>
+            <input type="text" class="form-person" id="language" required
+            [(ngModel)]="person.language" name="language">
+          </div>
+          <div>
+            <label for="ssn">Henkilötunnus</label>
+            <input type="text" class="form-person" id="ssn"
+            [(ngModel)]="person.ssn" name="ssn">
+          </div>
+          <div>
+            <label for="address">Osoite</label>
+            <input type="text" class="form-person" id="address" 
+            [(ngModel)]="person.address" name="address">
+          </div>
+          <div>
+            <label for="dateOfDeath">Kuolinpäivä</label>
+            <input type="date" class="form-person" id="dateOfDeath"
+            [(ngModel)]="person.dateOfDeath" name="dateOfDeath">
+          </div>
           
-          <label for="dateOfBirth">Syntymäpäivä*</label>
-          <input type="date" class="form-person" id="dateOfBirth" required
-          [(ngModel)]="person.dateOfBirth" name="dateOfBirth">
-          
-          <label for="nationality">Kansalaisuus*</label>
-          <input type="text" class="form-person" id="nationality" required
-          [(ngModel)]="person.nationality" name="nationality">
-          
-          <label for="language">Äidinkieli*</label>
-          <input type="text" class="form-person" id="language" required
-          [(ngModel)]="person.language" name="language">
-          
-          <label for="ssn">Henkilötunnus*</label>
-          <input type="text" class="form-person" id="ssn"
-          [(ngModel)]="person.ssn" name="ssn">
-          
-          <label for="address">Osoite</label>
-          <input type="text" class="form-person" id="address" 
-          [(ngModel)]="person.address" name="address">
-          
-          <label for="dateOfDeath">Kuolinpäivä</label>
-          <input type="date" class="form-person" id="dateOfDeath"
-          [(ngModel)]="person.dateOfDeath" name="dateOfDeath">
-          
-          <button>Lisää uusi henkilö</button>
+          <button>Tallenna muutokset</button>
           
         </form>
 
         <button (click)="cancelModify()">Peruuta</button>
 
       } @else {
-        
-        <li>
-          Tunniste {{ person.id }}
-          Nimi  {{ person.name }}
-          Syntymäpäivä {{ person.dateOfBirth }}
-          Kansalaisuus {{ person.nationality }}
-          Äidinkieli {{ person.language }}
-          Henkilötunnus {{ person.ssn }}
-          Osoite {{ person.address }}
-          Kuolinpäivä {{ person.dateOfDeath }}
+        <ul class="persons-container">
+          <li>
+            Tunniste {{ person.id }}
+            Nimi  {{ person.name }}
+            Syntymäpäivä {{ person.dateOfBirth }}
+            Kansalaisuus {{ person.nationality }}
+            Äidinkieli {{ person.language }}
+            Henkilötunnus {{ person.ssn }}
+            Osoite {{ person.address }}
+            Kuolinpäivä {{ person.dateOfDeath }}
 
-          <button (click)="startModify()">Muokkaa</button>
-        </li>
+            <button (click)="startModify()">Muokkaa</button>
+          </li>
+        </ul>
 
       }
 

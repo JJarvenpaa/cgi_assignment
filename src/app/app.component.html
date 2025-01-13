@@ -57,42 +57,43 @@
       @if (modifying) 
       {
          <!-- TODO: show error when required fields are not typed and disable button-->
-        <form class="form-person" (ngSubmit)="onModifySubmit(person.id)">
+        <!-- TODO: make update bug fix manually to avoid rebase hell -->
+        <form class="form-person" (ngSubmit)="onModifySubmit(person.id, person)">
            <!-- TODO: make more responsive when small size -->
           <div>
             <label for="name">Nimi*</label>
             <input type="text" class="form-person-2" id="name" required
-            [(ngModel)]="modifyPerson.name" name="name">
+            [(ngModel)]="person.name" name="name">
           </div>
           <div>
             <label for="dateOfBirth">Syntymäpäivä*</label>
             <input type="date" class="form-person-2" id="dateOfBirth" required
-            [(ngModel)]="modifyPerson.dateOfBirth" name="dateOfBirth">
+            [(ngModel)]="person.dateOfBirth" name="dateOfBirth">
           </div>
           <div>
             <label for="nationality">Kansalaisuus*</label>
             <input type="text" class="form-person-2" id="nationality" required
-            [(ngModel)]="modifyPerson.nationality" name="nationality">
+            [(ngModel)]="person.nationality" name="nationality">
           </div>
           <div>
             <label for="language">Äidinkieli*</label>
             <input type="text" class="form-person-2" id="language" required
-            [(ngModel)]="modifyPerson.language" name="language">
+            [(ngModel)]="person.language" name="language">
           </div>
           <div>
             <label for="ssn">Henkilötunnus</label>
             <input type="text" class="form-person-2" id="ssn"
-            [(ngModel)]="modifyPerson.ssn" name="ssn">
+            [(ngModel)]="person.ssn" name="ssn">
           </div>
           <div>
             <label for="address">Osoite</label>
             <input type="text" class="form-person-2" id="address" 
-            [(ngModel)]="modifyPerson.address" name="address">
+            [(ngModel)]="person.address" name="address">
           </div>
           <div>
             <label for="dateOfDeath">Kuolinpäivä</label>
             <input type="date" class="form-person-2" id="dateOfDeath"
-            [(ngModel)]="modifyPerson.dateOfDeath" name="dateOfDeath">
+            [(ngModel)]="person.dateOfDeath" name="dateOfDeath">
           </div>
           
           <button>Tallenna muutokset</button>

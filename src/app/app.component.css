@@ -28,9 +28,15 @@
     margin-top: 0.5em;
 }
 
-.form-person button{
+.form-person button, .person-container button {
    margin-bottom: 1em;
    align-self: flex-end;
+}
+
+.person-container > button {
+    margin-left: 1em;
+    margin-right: 0.5em;
+    flex-grow: 0.3;
 }
 
 .persons-container {
@@ -38,6 +44,10 @@
     margin-bottom: 5em;
     border-color: black;
     border-style: solid
+}
+
+.persons-container button {
+    align-self: flex-end;
 }
 
 .person-container {

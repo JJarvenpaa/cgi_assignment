@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core'
+import { Component, input, ViewEncapsulation } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { FormsModule } from '@angular/forms';
 import { Person } from './person'
@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-root',
   imports: [RouterOutlet, FormsModule],
   templateUrl: './app.component.html',

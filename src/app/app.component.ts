@@ -47,7 +47,10 @@ export class AppComponent {
 
   startModify() { this.modifying = true }
 
-  cancelModify() { this.modifying = false }
+  cancelModify() { 
+    this.fetchPersonsRequest() //Get data from backend if not saved, so the form doesn't have the temp data
+    this.modifying = false 
+  }
 
   removePerson(name: string, personID: number | null) {
     if(confirm('Oletko varma että haluat poistaa tämän henkilön tiedot? ' + name)) {

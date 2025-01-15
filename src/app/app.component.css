@@ -26,7 +26,7 @@ body {
 }
 
 .form-person > div {
-    margin-top: 1em;
+    margin: 1em 1em 1em 1em
 }
 
 .form-person input {
@@ -36,12 +36,13 @@ body {
 .form-person button, .person-container button {
    margin-bottom: 1em;
    align-self: flex-end;
+   flex-grow: 0.3;
 }
 
 .person-container > button {
     margin-left: 1em;
     margin-right: 0.5em;
-    flex-grow: 0.3;
+    
 }
 
 .persons-container {

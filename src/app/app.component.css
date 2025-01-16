@@ -75,11 +75,5 @@ body {
     margin-bottom: 2em;
     margin-top: 2em;
 }
-
-@media screen and (min-width: 950px) {
-
-    .person-container p {
-        padding: auto 1em auto 1em;
-    }
     
 }

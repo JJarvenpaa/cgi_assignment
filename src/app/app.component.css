@@ -35,7 +35,6 @@ body {
 
 .form-person button, .person-container button {
    align-self: flex-end;
-   flex-grow: 0.3;
 }
 
 .form-person button {
@@ -75,4 +74,12 @@ body {
     flex-wrap: wrap;
     margin-bottom: 2em;
     margin-top: 2em;
+}
+
+@media screen and (min-width: 950px) {
+
+    .person-container p {
+        padding: auto 1em auto 1em;
+    }
+    
 }

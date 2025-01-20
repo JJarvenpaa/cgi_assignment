@@ -66,7 +66,6 @@ export class AppComponent {
   modifyPersonRequest(personId: number | null, person: Person) {
     //TODO validate Person obj before sending request
     this.http.put('http://localhost:8080/api/persons/' + personId, person).subscribe(response => { console.log('Response from API: ', response)})
-    
     this.modifying = false
 
   }

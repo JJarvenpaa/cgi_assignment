@@ -1,4 +1,4 @@
-import { Component, input, ViewEncapsulation } from '@angular/core'
+import { Component, ViewEncapsulation } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { FormsModule } from '@angular/forms';
 import { Person } from './person'

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core'
+import { Component, ViewEncapsulation } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { FormsModule } from '@angular/forms';
 import { Person } from './person'
@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-root',
   imports: [RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
@@ -46,7 +47,10 @@ export class AppComponent {
 
   startModify() { this.modifying = true }
 
-  cancelModify() { this.modifying = false }
+  cancelModify() { 
+    this.fetchPersonsRequest() //Get data from backend if not saved, so the form doesn't have the temp data
+    this.modifying = false 
+  }
 
   removePerson(name: string, personID: number | null) {
     if(confirm('Oletko varma että haluat poistaa tämän henkilön tiedot? ' + name)) {

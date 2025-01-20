@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+}
+
+.app-container {
+   margin: 3em 5em 0em 5em;
+   padding: 0;
+}
+
+.heading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-person {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-bottom: 2em;
+    border-color: black;
+    border-style: solid;
+    flex-wrap: wrap;
+    padding: 0 3em 0em 3em;
+    gap: 1em;
+}
+
+.form-person > div {
+    margin: 2em auto 2em auto
+}
+
+.form-person input {
+    margin-top: 0.5em;
+}
+
+.form-person button, .person-container button {
+   align-self: flex-end;
+   flex-grow: 0.3;
+}
+
+.form-person button {
+    margin-bottom: 2em;
+}
+
+.person-container > button {
+    margin-left: 1em;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+    
+}
+
+.persons-container > .form-person {
+    padding: 0;
+}
+
+.persons-container {
+    justify-content: center;
+    margin-bottom: 5em;
+    border-color: black;
+    border-style: solid;
+    padding: 0 3em 0 3em;
+}
+
+.persons-container button {
+    align-self: flex-end;
+}
+
+.persons-container > .form-person {
+    border-style: none;
+}
+
+.person-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    gap: 1em;
+}
+    

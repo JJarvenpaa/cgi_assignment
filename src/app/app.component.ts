@@ -55,6 +55,7 @@ export class AppComponent {
   removePerson(name: string, personID: number | null) {
     if(confirm('Oletko varma että haluat poistaa tämän henkilön tiedot? ' + name)) {
       this.removePersonRequest(personID)
+      this.fetchPersonsRequest()
     }
 
   }

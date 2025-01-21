@@ -1,4 +1,15 @@
-# TODO: add maven building here
+# Install files
+```bash
+./mvnw generate-resources
+```
+
+# Start Java backend
+Go to src/main/java/com/example/demo/ApiController.java and run it from your IDE
+Now the backend is running
+
+# Array Tests
+Are located in src/main/test/java/com/example/demo/ArrayApplicationTests.java
+
 # Client
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.3.

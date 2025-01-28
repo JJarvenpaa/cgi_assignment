@@ -10,6 +10,16 @@ Now the backend is running
 # Array Tests
 Are located in src/main/test/java/com/example/demo/ArrayApplicationTests.java
 
+Array assignment: 
+
+Write a Java program with a unit test that determines the smallest number of numbers that can fit between the different numbers in a table in a natural order.
+
+For example, the correct answer for a table [ 1, 4, 10 ] would be 2, since the numbers 2 and 3 would fit between 1 and 4, and a larger number of digits would fit between the other numbers.
+- The function can assume that all elements of the table contain a natural number
+- The function must work in the same way even if the order of the numbers in the table changes
+- The function must work in the same way even if there are more than one of the same number in the table
+- The function must work in the same way even if several numbers in the table have the same length of space, e.g. [ 1, 3, 5 ]
+
 # Client
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.3.
